@@ -4,23 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Darr Solutions LLC</title>
-  <meta name="description" content="Darr Solutions LLC is a Houston-based consulting practice helping businesses solve practical problems with clear thinking and hands-on execution." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a2540'/><text x='50' y='68' font-size='58' font-family='Georgia,serif' fill='%23ffffff' text-anchor='middle'>D</text></svg>" />
+  <meta name="description" content="Darr Solutions LLC is a Houston notary and signing practice that also builds custom web tools for record-keeping and reconciliation." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect width='40' height='40' rx='5' fill='%231A5CD6'/><text x='20' y='27' font-size='20' font-family='Helvetica,Arial,sans-serif' font-weight='600' fill='%23ffffff' text-anchor='middle'>D</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:ital@0;1&display=swap" />
   <style>
     :root {
-      --navy: #0a2540;
-      --navy-800: #0d2e4d;
-      --blue: #2b6cb0;
-      --blue-light: #4a90d9;
-      --slate: #4a5568;
-      --slate-light: #718096;
-      --bg: #ffffff;
-      --bg-alt: #f6f9fc;
-      --border: #e2e8f0;
-      --text: #1a2b42;
-      --white: #ffffff;
-      --radius: 12px;
+      --blue: #1A5CD6;
+      --blue-deep: #123F96;
+      --ink: #0E1A2B;
+      --horizon: #66C7E5;
+      --slate: #5A687C;
+      --mist: #F4F7FB;
+      --line: #DCE4EF;
+      --paper: #FFFFFF;
+      --card: #FFFFFF;
+      --panel: #0E1A2B;
+      --panel-text: #FFFFFF;
+      --panel-muted: #93A4B8;
+      --header-bg: rgba(255, 255, 255, 0.9);
+      --shadow: rgba(14, 26, 43, 0.14);
+
+      --sans: "IBM Plex Sans", Helvetica, Arial, sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+      --serif: "IBM Plex Serif", Georgia, serif;
+      --radius: 4px;
       --maxw: 1080px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --blue: #6098F2;
+        --blue-deep: #4A80D8;
+        --ink: #E9F0F8;
+        --horizon: #66C7E5;
+        --slate: #93A4B8;
+        --mist: #101C2B;
+        --line: #22344A;
+        --paper: #0B1420;
+        --card: #16253A;
+        --panel: #101C2B;
+        --panel-text: #E9F0F8;
+        --panel-muted: #93A4B8;
+        --header-bg: rgba(11, 20, 32, 0.85);
+        --shadow: rgba(0, 0, 0, 0.5);
+      }
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,11 +57,13 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.65;
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--paper);
+      font-size: 16px;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      font-variant-numeric: tabular-nums;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -44,14 +75,35 @@
       padding: 0 24px;
     }
 
+    /* Eyebrow: Plex Mono label with a Signal Blue rule above */
+    .eyebrow {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: block;
+      width: 36px;
+      height: 2px;
+      background: var(--blue);
+      margin-bottom: 14px;
+    }
+
     /* Header */
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.92);
+      background: var(--header-bg);
       backdrop-filter: saturate(180%) blur(12px);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav {
@@ -62,13 +114,13 @@
     }
 
     .wordmark {
-      font-size: 1.2rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      color: var(--navy);
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: var(--ink);
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 11px;
     }
 
     .wordmark .mark {
@@ -77,13 +129,16 @@
       justify-content: center;
       width: 34px;
       height: 34px;
-      border-radius: 9px;
-      background: var(--navy);
-      color: var(--white);
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 700;
-      font-size: 1.1rem;
+      border-radius: 5px;
+      background: var(--blue);
+      color: #ffffff;
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
     }
+
+    .wordmark .dot { color: var(--blue); }
 
     .nav-links {
       display: flex;
@@ -98,65 +153,53 @@
       transition: color 0.15s ease;
     }
 
-    .nav-links a.link:hover { color: var(--navy); }
+    .nav-links a.link:hover { color: var(--ink); }
 
     .btn {
       display: inline-block;
-      background: var(--navy);
-      color: var(--white);
+      font-family: var(--sans);
+      background: var(--blue);
+      color: #ffffff;
       font-weight: 600;
       font-size: 0.95rem;
-      padding: 10px 22px;
-      border-radius: 8px;
+      padding: 11px 22px;
+      border-radius: var(--radius);
       transition: background 0.15s ease, transform 0.15s ease;
     }
 
-    .btn:hover { background: var(--blue); transform: translateY(-1px); }
+    .btn:hover { background: var(--blue-deep); transform: translateY(-1px); }
 
-    .btn-lg { padding: 14px 30px; font-size: 1.02rem; }
+    .btn-lg { padding: 14px 30px; font-size: 1.0rem; }
 
     .btn-outline {
       background: transparent;
-      color: var(--navy);
-      border: 1.5px solid var(--border);
+      color: var(--ink);
+      border: 1.5px solid var(--line);
     }
 
-    .btn-outline:hover { background: var(--bg-alt); border-color: var(--blue); color: var(--navy); }
+    .btn-outline:hover { background: var(--mist); border-color: var(--blue); color: var(--ink); }
 
     /* Hero */
     .hero {
       padding: 96px 0 84px;
-      background: linear-gradient(180deg, #ffffff 0%, var(--bg-alt) 100%);
+      background: linear-gradient(180deg, var(--paper) 0%, var(--mist) 100%);
     }
 
-    .hero-inner { max-width: 760px; }
-
-    .eyebrow {
-      display: inline-block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--blue);
-      background: #eaf2fb;
-      padding: 6px 14px;
-      border-radius: 999px;
-      margin-bottom: 22px;
-    }
+    .hero-inner { max-width: 780px; }
 
     .hero h1 {
-      font-size: clamp(2.1rem, 5vw, 3.3rem);
-      line-height: 1.12;
-      letter-spacing: -0.02em;
-      color: var(--navy);
-      font-weight: 800;
+      font-size: clamp(2.1rem, 5vw, 3.25rem);
+      line-height: 1.14;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      font-weight: 600;
       margin-bottom: 22px;
     }
 
     .hero p {
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
       color: var(--slate);
-      max-width: 620px;
+      max-width: 640px;
       margin-bottom: 34px;
     }
 
@@ -165,30 +208,29 @@
     /* Sections */
     section { padding: 84px 0; }
 
-    .section-head { max-width: 640px; margin-bottom: 52px; }
-
-    .section-head .eyebrow { margin-bottom: 16px; }
+    .section-head { max-width: 680px; margin-bottom: 52px; }
 
     .section-head h2 {
-      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
-      line-height: 1.18;
-      letter-spacing: -0.015em;
-      color: var(--navy);
-      font-weight: 800;
+      font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      font-weight: 600;
       margin-bottom: 14px;
     }
 
-    .section-head p { font-size: 1.08rem; color: var(--slate); }
+    .section-head p { font-size: 1.05rem; color: var(--slate); max-width: 620px; }
 
     /* Services */
-    #services { background: var(--bg-alt); }
+    #services { background: var(--mist); }
 
     .group-label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--blue);
+      color: var(--slate);
       margin: 0 0 20px;
     }
 
@@ -197,28 +239,28 @@
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 20px;
     }
 
     .card {
-      background: var(--white);
-      border: 1px solid var(--border);
+      background: var(--card);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 32px 28px;
+      padding: 30px 26px;
       transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
     }
 
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 40px -20px rgba(10, 37, 64, 0.35);
-      border-color: #cfe0f2;
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px -20px var(--shadow);
+      border-color: var(--blue);
     }
 
     .card .icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 10px;
-      background: #eaf2fb;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius);
+      background: var(--mist);
       color: var(--blue);
       display: flex;
       align-items: center;
@@ -226,11 +268,11 @@
       margin-bottom: 20px;
     }
 
-    .card .icon svg { width: 24px; height: 24px; }
+    .card .icon svg { width: 22px; height: 22px; }
 
-    .card h3 { font-size: 1.2rem; color: var(--navy); margin-bottom: 10px; font-weight: 700; }
+    .card h3 { font-size: 1.15rem; color: var(--ink); margin-bottom: 10px; font-weight: 600; letter-spacing: -0.01em; }
 
-    .card p { color: var(--slate); font-size: 0.98rem; }
+    .card p { color: var(--slate); font-size: 0.97rem; }
 
     /* About */
     .about-grid {
@@ -240,25 +282,42 @@
       align-items: center;
     }
 
-    .about-copy p { color: var(--slate); font-size: 1.08rem; margin-bottom: 18px; }
+    .about-copy h2 {
+      font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+      color: var(--ink);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+
+    .about-copy p { color: var(--slate); font-size: 1.05rem; margin-bottom: 18px; }
     .about-copy p:last-child { margin-bottom: 0; }
-    .about-copy strong { color: var(--navy); }
+    .about-copy strong { color: var(--ink); font-weight: 600; }
 
     .about-facts {
-      background: var(--navy);
-      color: var(--white);
+      background: var(--panel);
+      color: var(--panel-text);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 34px 32px;
     }
 
-    .about-facts .fact { padding: 16px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
+    .about-facts .fact { padding: 16px 0; border-bottom: 1px solid rgba(147, 164, 184, 0.22); }
     .about-facts .fact:first-child { padding-top: 0; }
     .about-facts .fact:last-child { border-bottom: none; padding-bottom: 0; }
-    .about-facts .fact .label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-light); margin-bottom: 4px; }
-    .about-facts .fact .value { font-size: 1.05rem; font-weight: 600; }
+    .about-facts .fact .label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--horizon);
+      margin-bottom: 5px;
+    }
+    .about-facts .fact .value { font-size: 1.05rem; font-weight: 600; color: var(--panel-text); }
 
     /* Contact */
-    #contact { background: var(--bg-alt); }
+    #contact { background: var(--mist); }
 
     .contact-grid {
       display: grid;
@@ -268,43 +327,52 @@
     }
 
     .contact-copy h2 {
-      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
-      color: var(--navy);
-      font-weight: 800;
-      letter-spacing: -0.015em;
+      font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+      color: var(--ink);
+      font-weight: 600;
+      letter-spacing: -0.02em;
       margin-bottom: 14px;
-      line-height: 1.18;
+      line-height: 1.2;
     }
 
-    .contact-copy p { color: var(--slate); font-size: 1.08rem; margin-bottom: 12px; }
+    .contact-copy p { color: var(--slate); font-size: 1.05rem; margin-bottom: 12px; }
     .contact-copy a.email { color: var(--blue); font-weight: 600; }
 
     form {
-      background: var(--white);
-      border: 1px solid var(--border);
+      background: var(--card);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 32px;
     }
 
     .field { margin-bottom: 18px; }
-    .field label { display: block; font-size: 0.9rem; font-weight: 600; color: var(--navy); margin-bottom: 7px; }
+    .field label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-bottom: 8px;
+    }
 
     .field input, .field textarea {
       width: 100%;
       padding: 12px 14px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
       font-size: 0.98rem;
-      font-family: inherit;
-      color: var(--text);
-      background: var(--bg-alt);
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--mist);
       transition: border-color 0.15s ease, background 0.15s ease;
     }
 
     .field input:focus, .field textarea:focus {
       outline: none;
       border-color: var(--blue);
-      background: var(--white);
+      background: var(--paper);
     }
 
     .field textarea { resize: vertical; min-height: 120px; }
@@ -313,9 +381,10 @@
 
     /* Footer */
     footer {
-      background: var(--navy);
-      color: rgba(255, 255, 255, 0.72);
+      background: var(--panel);
+      color: var(--panel-muted);
       padding: 44px 0;
+      border-top: 1px solid var(--line);
     }
 
     .footer-inner {
@@ -326,9 +395,10 @@
       gap: 16px;
     }
 
-    .footer-inner .fmark { font-weight: 700; color: var(--white); font-size: 1.05rem; }
-    .footer-inner .fmeta { font-size: 0.9rem; }
-    .footer-inner a:hover { color: var(--white); }
+    .footer-inner .fmark { font-weight: 600; color: var(--panel-text); font-size: 1.05rem; letter-spacing: -0.02em; }
+    .footer-inner .fmark .dot { color: var(--horizon); }
+    .footer-inner .fmeta { font-size: 0.9rem; font-family: var(--mono); }
+    .footer-inner a:hover { color: var(--panel-text); }
 
     /* Responsive */
     @media (max-width: 860px) {
@@ -350,7 +420,7 @@
     <div class="wrap nav">
       <a href="#top" class="wordmark">
         <span class="mark">D</span>
-        <span>Darr Solutions LLC</span>
+        <span>Darr Solutions LLC<span class="dot">.</span></span>
       </a>
       <nav class="nav-links">
         <a href="#services" class="link">Services</a>
@@ -366,11 +436,11 @@
     <section class="hero">
       <div class="wrap hero-inner">
         <span class="eyebrow">Houston, Texas</span>
-        <h1>Practical consulting for businesses that need answers, not overhead.</h1>
-        <p>Darr Solutions is an independent consulting practice. I work directly with owners and teams to untangle problems, sharpen decisions, and get the right things done, without the layers of a big firm.</p>
+        <h1>Notary and signing services, and software that replaces the spreadsheet.</h1>
+        <p>Darr Solutions is an independent, owner-led practice. I handle notary and signing work around Houston, and I build custom web tools for the record-keeping and reconciliation that manual files stop handling well.</p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-lg">Start a conversation</a>
-          <a href="#services" class="btn btn-lg btn-outline">See how I help</a>
+          <a href="#services" class="btn btn-lg btn-outline">See what I do</a>
         </div>
       </div>
     </section>
@@ -380,8 +450,8 @@
       <div class="wrap">
         <div class="section-head">
           <span class="eyebrow">What I do</span>
-          <h2>Notary and signing services, plus custom software for the work spreadsheets outgrow.</h2>
-          <p>Two kinds of work under one roof: notary and signing services around Houston, and web tools built for the record-keeping and reconciliation that manual files stop handling well.</p>
+          <h2>Two kinds of work under one roof.</h2>
+          <p>Notary and signing services around Houston, and web tools built for the record-keeping and reconciliation that manual files stop handling well.</p>
         </div>
 
         <p class="group-label">Notary &amp; signing</p>
@@ -442,7 +512,7 @@
         <div class="about-grid">
           <div class="about-copy">
             <span class="eyebrow">About</span>
-            <h2 style="font-size:clamp(1.7rem,3.5vw,2.4rem);color:var(--navy);font-weight:800;letter-spacing:-0.015em;margin-bottom:18px;line-height:1.18;">A single point of contact who does the work.</h2>
+            <h2>A single point of contact who does the work.</h2>
             <p>Darr Solutions is a <strong>solo practice</strong>, which means the person you talk to is the person doing the work. No handoffs, no junior team learning on your budget, and no scope built to keep an office busy.</p>
             <p>I take on a small number of engagements at a time so each one gets real attention. If I am not the right fit for what you need, I will tell you plainly and point you somewhere better.</p>
           </div>
@@ -502,7 +572,7 @@
 
   <footer>
     <div class="wrap footer-inner">
-      <span class="fmark">Darr Solutions LLC</span>
+      <span class="fmark">Darr Solutions LLC<span class="dot">.</span></span>
       <span class="fmeta">Houston, Texas &nbsp;&middot;&nbsp; <a href="mailto:jacksonodarr@outlook.com">jacksonodarr@outlook.com</a> &nbsp;&middot;&nbsp; darr.solutions</span>
     </div>
   </footer>
@@ -510,11 +580,11 @@
   <script>
     function sendMail(e) {
       e.preventDefault();
-      var name = encodeURIComponent(document.getElementById('name').value.trim());
-      var email = encodeURIComponent(document.getElementById('email').value.trim());
+      var name = document.getElementById('name').value.trim();
+      var email = document.getElementById('email').value.trim();
       var message = document.getElementById('message').value.trim();
-      var subject = 'Website inquiry from ' + decodeURIComponent(name);
-      var body = message + '\n\n---\nFrom: ' + decodeURIComponent(name) + ' (' + decodeURIComponent(email) + ')';
+      var subject = 'Website inquiry from ' + name;
+      var body = message + '\n\n---\nFrom: ' + name + ' (' + email + ')';
       window.location.href = 'mailto:jacksonodarr@outlook.com'
         + '?subject=' + encodeURIComponent(subject)
         + '&body=' + encodeURIComponent(body);
