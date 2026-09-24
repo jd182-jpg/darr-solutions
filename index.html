@@ -183,6 +183,17 @@
     /* Services */
     #services { background: var(--bg-alt); }
 
+    .group-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin: 0 0 20px;
+    }
+
+    .cards + .group-label { margin-top: 52px; }
+
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -369,30 +380,57 @@
       <div class="wrap">
         <div class="section-head">
           <span class="eyebrow">What I do</span>
-          <h2>Focused help across the work that actually moves the needle.</h2>
-          <p>Every engagement is scoped to your situation. These are the areas I am asked about most.</p>
+          <h2>Notary and signing services, plus custom software for the work spreadsheets outgrow.</h2>
+          <p>Two kinds of work under one roof: notary and signing services around Houston, and web tools built for the record-keeping and reconciliation that manual files stop handling well.</p>
         </div>
+
+        <p class="group-label">Notary &amp; signing</p>
         <div class="cards">
           <div class="card">
             <div class="icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 22l5-3 5 3-1.21-8.11"/></svg>
             </div>
-            <h3>Strategy &amp; analysis</h3>
-            <p>Clear-eyed assessment of where you are, what the numbers say, and the handful of moves that matter most right now.</p>
+            <h3>Mobile notary</h3>
+            <p>Acknowledgments, jurats, oaths, and copy certifications, handled in person on your schedule for individuals and small businesses.</p>
           </div>
           <div class="card">
             <div class="icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>
             </div>
-            <h3>Operations &amp; process</h3>
-            <p>Turning messy, manual workflows into simple systems your team can actually run, so the work is repeatable and less dependent on any one person.</p>
+            <h3>Loan signing agent</h3>
+            <p>Walking borrowers and sellers through closing packages start to finish: correct execution, dates, and notarizations, then back to the escrow or title team on time.</p>
           </div>
           <div class="card">
             <div class="icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
             </div>
-            <h3>Special projects</h3>
-            <p>The important thing that never gets done because no one owns it. I take it end to end and hand you something finished.</p>
+            <h3>Lease &amp; document signings</h3>
+            <p>Signings for leases, affidavits, and other agreements, with signers guided through each page so nothing gets missed.</p>
+          </div>
+        </div>
+
+        <p class="group-label">Software &amp; data</p>
+        <div class="cards">
+          <div class="card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14l-2 2 2 2M14 14l2 2-2 2"/></svg>
+            </div>
+            <h3>Custom web applications</h3>
+            <p>Internal tools and databases that replace the spreadsheet and the group chat: a real system of record your team can run, with roles and permissions where they matter.</p>
+          </div>
+          <div class="card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <h3>Data reconciliation &amp; verification</h3>
+            <p>Systems that check your numbers against the source and surface exactly what does not tie out, so errors get caught before they cost money instead of after.</p>
+          </div>
+          <div class="card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+            </div>
+            <h3>Workflow automation</h3>
+            <p>Pulling data out of PDFs and documents, drafting the routine correspondence, and tracking the follow-ups, so the repetitive work runs itself and stays consistent.</p>
           </div>
         </div>
       </div>
